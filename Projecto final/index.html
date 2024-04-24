@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos Semanais</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showExpenses()">Gastos</a></li>
+                <li><a href="#" onclick="showBalance()">Saldo</a></li>
+                <li><a href="#" onclick="showGoals()">Metas</a></li>
+                <li><a href="#" onclick="showReports()">Relatórios</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container" id="main-container">
+        <h1>Gastos Semanais</h1>
+        <div class="input-container" id="expenses-container">
+            <select id="category">
+                <option value="Alimentacao">Alimentação</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Lazer">Lazer</option>
+                <!-- Adicione mais opções de categoria conforme necessário -->
+            </select>
+            <input type="number" id="amount" placeholder="Valor">
+            <button onclick="saveExpense();">Salvar</button>
+        </div>
+
+        <div id="expenses-list"></div>
+        <div id="balance" style="display: none;">
+            <!-- Aqui será exibido o saldo -->
+            <p id="balance-amount">0.00 Kz</p>
+        </div>
+        <div id="goals" style="display: none;">
+            <!-- Aqui será exibido o formulário para definir metas -->
+            <h2>Definir Metas Financeiras</h2>
+            <form id="goals-form">
+                <label for="goal-amount">Valor da Meta:</label>
+                <input type="number" id="goal-amount" placeholder="Valor">
+                <button type="submit">Definir Meta</button>
+            </form>
+            <p id="goal-progress">Progresso em relação à meta: 0%</p>
+        </div>
+        <div id="reports" style="display: none;">
+            <h2>Relatórios</h2>
+            <div id="weekly-report"></div>
+            <button onclick="exportReport()">Exportar Relatório</button>
+        </div>
+    </div>
+
+    <script src="js/vida.js"></script>
+</body>
+</html>
